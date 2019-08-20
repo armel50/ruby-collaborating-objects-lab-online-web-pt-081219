@@ -1,5 +1,5 @@
 class MP3Importer
-  attr_accessor :path, :mp3files, :normilized_array
+  attr_accessor :path, :normilized_array
   @@all = []
 
   def initialize(file_name)
@@ -9,11 +9,8 @@ class MP3Importer
   
   def files
     result= Dir["#{@path}/*.mp3"]
-    
     @normilized_array = []
-    result.each do |el|
-      @normilized_array << el.split(/\.\/.+\/.+\//)[1]
-    end 
+    result.each{|el| @normilized_array << el.split(/\.\/.+\/.+\//)[1]} 
     @normilized_array
   end 
    

@@ -16,20 +16,16 @@ class Artist
   end
   
   def add_song(song_object)
-    
     song_object.artist = self
   end
   
   def self.find_or_create_by_name(artist_name)
     result = @@all.find{|el| el if el.name = artist_name}
-    if result == nil 
-      result = Artist.new(artist_name)
-    end
+      result = Artist.new(artist_name) if result == nil
      result
   end
   
   def print_songs
     @songs.each{|el| puts el.name}
-    
   end
 end

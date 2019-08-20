@@ -24,6 +24,7 @@ class Song
     splitted_file = file_name.split(" - ") 
     new_song = Song.new(splitted_file[1]) 
     new_song.artist_name = splitted_file[0]
+    
       new_song.artist.songs << self
       new_song
   end
